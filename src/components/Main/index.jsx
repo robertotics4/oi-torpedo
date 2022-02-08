@@ -35,7 +35,7 @@ export function Main () {
         message: state.name ? `${state.name.toUpperCase()}: ${state.message}` : state.message
       };
 
-      await axios.post('https://sistemas-hm.equatorialenergia.com.br/bff-sendgrid-mkm/api/sms', requestData, {
+      await axios.post(process.env.REACT_APP_BFF_URL, requestData, {
         headers: {
           'Content-Type': 'application/json',
         }
